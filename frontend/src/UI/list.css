@@ -32,11 +32,6 @@
   background-color: white;
 }
 
-.room-name-list li:focus {
-  color: #333366;
-  background-color: white;
-}
-
 .chat-list {
   position: relative;
   width: 98%;
