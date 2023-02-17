@@ -1,6 +1,5 @@
-.btn-register {
-  width: 15%;
-  margin-left: 1%;
+.register-button {
+  width: 20%;
   padding: 1vmax;
   border: 1px solid #27acd9;
   border-radius: 5px;
@@ -10,7 +9,7 @@
   transition: 0.5s;
 }
 
-.btn-create-room {
+.create-room-button {
   width: 97%;
   margin: 1.5%;
   padding: 0.5rem;
@@ -22,7 +21,7 @@
   transition: 0.5s;
 }
 
-.btn-create {
+.create-button {
   width: 10%;
   margin-left: 1%;
   margin-bottom: 10%;
@@ -35,14 +34,14 @@
   transition: 0.5s;
 }
 
-.btn-register:hover,
-.btn-create-room:hover,
-.btn-create:hover {
+.register-button:hover,
+.create-room-button:hover,
+.create-button:hover {
   color: whitesmoke;
   background-color: #27acd9;
 }
 
-.btn-send-message {
+.send-message-button {
   width: 10%;
   padding: 0.3vmax;
   border: 1px solid #4169E1;
@@ -54,7 +53,7 @@
   transition: 0.5s;
 }
 
-.btn-send-message:hover {
+.send-message-button:hover {
   color: whitesmoke;
   border: 1px solid #87CEFA;
   background-color: #87CEFA;

@@ -1,22 +1,24 @@
 import { useState } from "react";
 import RoomList from "./RoomList";
-import '../UI/button.css';
-import '../UI/initial_page.css';
-import '../UI/text-box.css';
+import '../css/reset-margin.css';
+import '../css/button.css';
+import '../css/text-box.css';
+import '../css/text.css';
 
 const RegisterUserName = () => {
   const [switchRoomList, setSwitchRoomList] = useState(false);
   const [userName, setUserName] = useState('');
 
-  const onChangeUserName = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const inputUserName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserName(event.target.value);
   }
 
-  const onClickNameCheck = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const userNameCheck = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
+    const userNameMaxLength = 20;
     if (userName.length === 0) {
       alert('名前を入力してください');
-    } else if (userName.length > 20) {
+    } else if (userName.length > userNameMaxLength) {
       alert('文字数制限を超えています');
       setUserName('');
     } else {
@@ -28,15 +30,15 @@ const RegisterUserName = () => {
     <div>
       {!switchRoomList &&
         <div>
-          <div id='welcameText'>ようこそ</div>
-          <div id='registerUserName' className='input-user-name'>
+          <div className='welcome-text'>ようこそ</div>
+          <div className='input-user-name'>
               <input
                 type='text'
                 value={userName}
-                onChange={onChangeUserName}
+                onChange={inputUserName}
                 placeholder='名前を入力してください'
               />
-              <button className='btn-register' onClick={onClickNameCheck}>登録</button>
+              <button className='register-button' onClick={userNameCheck}>登録</button>
           </div>
         </div>
       }

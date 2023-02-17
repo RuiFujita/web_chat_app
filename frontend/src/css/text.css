@@ -1,4 +1,12 @@
-.text-room-name {
+.welcome-text{
+  width: 70%;
+  margin: 10% auto 0;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.room-name-text {
   width: 95%;
   height: 5%;
   margin: 0 auto;
@@ -9,7 +17,7 @@
   background-color: #EEEEEE;
 }
 
-.text-user-name {
+.user-name-text {
   width: 98%;
   margin: 1% auto 0;
   padding-left: 1%;
@@ -18,14 +26,14 @@
   line-height: 1.5;
 }
 
-.text-my-name {
+.my-name-text {
   text-align: right;
   margin-right: 1%;
   font-size: 0.7rem;
   line-height: 1.5;
 }
 
-.text-others-name {
+.others-name-text {
   margin-left: 1%;
   font-size: 0.7rem;
   line-height: 1.5;

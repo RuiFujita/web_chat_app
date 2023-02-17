@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
-import '../UI/text.css';
+import '../css/button.css';
+import '../css/list.css';
+import '../css/text-box.css';
+import '../css/text.css';
 
 type Props = {
   userName: string,
@@ -25,9 +28,9 @@ type SendMessage = {
 const socket = io('http://localhost:8000/');
 
 const ChatView = (props: Props) => {
-  const [messageList, setMessageList] = useState<SendMessage[]>([]);
-  const [message, setMessage] = useState('');
   const [chatLog, setChatLog] = useState([]);
+  const [message, setMessage] = useState('');
+  const [messageList, setMessageList] = useState<SendMessage[]>([]);
 
   useEffect(() => {
     const roomName = props.roomName;
@@ -50,7 +53,7 @@ const ChatView = (props: Props) => {
     });
   }, []);
 
-  const onChangeMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const inputMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
   }
 
@@ -67,7 +70,6 @@ const ChatView = (props: Props) => {
 
     axios.post('http://localhost:8000/messages', {
       roomId: props.roomId,
-      dateTime: new Date().toLocaleString(),
       message,
       sender: props.userName,
     })
@@ -79,13 +81,13 @@ const ChatView = (props: Props) => {
         <ul>
           {chatLog.map((chatLog: ChatLog) => (
             <div key={chatLog.message_id}>
-              <p className={chatLog.message_sender === props.userName ? 'text-my-name' : 'text-others-name'}>{chatLog.message_sender}</p>
+              <p className={chatLog.message_sender === props.userName ? 'my-name-text' : 'others-name-text'}>{chatLog.message_sender}</p>
               <li className={chatLog.message_sender === props.userName ? 'my-chat-list' : 'others-chat-list'}>{chatLog.message_contents}</li>
             </div>
           ))}
           {messageList.map((data, index) => (
             <div key={index}>
-              <p className={data.userName === props.userName ? 'text-my-name' : 'text-others-name'}>{data.userName}</p>
+              <p className={data.userName === props.userName ? 'my-name-text' : 'others-name-text'}>{data.userName}</p>
               <li className={data.userName === props.userName ? 'my-chat-list' : 'others-chat-list'}>{data.message}</li>
             </div>
           ))}
@@ -93,13 +95,13 @@ const ChatView = (props: Props) => {
       </div >
 
       <div className='input-message'>
-        <p className='text-user-name'>{props.userName}</p>
+        <p className='user-name-text'>{props.userName}</p>
         <input
           value={message}
           placeholder='送信したい内容を入力して下さい'
-          onChange={onChangeMessage}
+          onChange={inputMessage}
         />
-        <button className='btn-send-message' onClick={onClickSend}>送信</button>
+        <button className='send-message-button' onClick={onClickSend}>送信</button>
       </div>
     </div>
   );

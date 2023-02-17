@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import '../css/button.css';
+import '../css/text-box.css';
 
 type Props = {
   setRoomInfo: Function
@@ -9,11 +11,11 @@ const CreateRoom = (props: Props) => {
   const [roomName, setRoomName] = useState('');
   const url = 'http://localhost:8000';
 
-  const onChangeNewRoom = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const inputRoomName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRoomName(event.target.value);
   }
 
-  const onClickCreate = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const onClickCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
     if (roomName === '') {
       alert('ルーム名を入力してください')
@@ -36,8 +38,8 @@ const CreateRoom = (props: Props) => {
         <input
           value={roomName}
           placeholder='ルームを追加'
-          onChange={onChangeNewRoom} />
-        <button className='btn-create' onClick={onClickCreate}>作成</button>
+          onChange={inputRoomName} />
+        <button className='create-button' onClick={onClickCreateRoom}>作成</button>
       </div>
     </div>
   )

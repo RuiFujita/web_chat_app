@@ -56,7 +56,7 @@ app.post('/messages', (request, response) => {
   connection.connect();
 
   const roomId = request.body.roomId;
-  const dateTime = request.body.dateTime;
+  const dateTime = new Date().toLocaleString();
   const message = request.body.message;
   const sender = request.body.sender;
   connection.query(
