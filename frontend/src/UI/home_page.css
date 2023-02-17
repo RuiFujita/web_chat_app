@@ -1,0 +1,29 @@
+.whole {
+  display: flex;
+}
+
+.room-list-space {
+  display: flex;
+  flex-flow: column;
+  width: calc(100% / 5);
+  height: 100vh;
+  background-color: #DDDDDD;
+}
+
+.work-space {
+  position: relative;
+  width: calc(100% * (4/5));
+  height: 100vh;
+  background-color: #EEEEEE;
+  box-shadow: -8px 0 10px -5px grey;
+}
+
+.chat-space {
+  display: flex;
+  flex-flow: column;
+  width: 98%;
+  height: 92%;
+  margin: 0 auto;
+  background-color: #EEEEEE;
+  /* background-color: #F0F8FF; */
+}

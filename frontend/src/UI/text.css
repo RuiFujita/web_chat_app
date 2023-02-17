@@ -1,0 +1,32 @@
+.text-room-name {
+  width: 95%;
+  height: 5%;
+  margin: 0 auto;
+  padding: 0.5%;
+  border-bottom: 2px solid #DDDDDD;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #EEEEEE;
+}
+
+.text-user-name {
+  width: 98%;
+  margin: 1% auto 0;
+  padding-left: 1%;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.text-my-name {
+  text-align: right;
+  margin-right: 1%;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.text-others-name {
+  margin-left: 1%;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}

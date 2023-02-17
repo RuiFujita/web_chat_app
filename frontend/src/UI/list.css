@@ -1,0 +1,75 @@
+.room-name-list {
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.room-name-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.room-name-list::-webkit-scrollbar-track {
+  background-color: #CCCCCC;
+}
+
+.room-name-list::-webkit-scrollbar-thumb {
+  background-color: #17585d;
+}
+
+.room-name-list li {
+  width: 97%;
+  padding: 3% 0 3% 3%;
+  margin: 0 auto;
+  color: grey;
+  font-size: 1rem;
+  list-style: none;
+  background-color: #DDDDDD;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.room-name-list li:hover {
+  color: #333366;
+  background-color: white;
+}
+
+.room-name-list li:focus {
+  color: #333366;
+  background-color: white;
+}
+
+.chat-list {
+  position: relative;
+  width: 98%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #EEEEEE;
+  list-style-type: none;
+  overflow-y: scroll;
+}
+
+.my-chat-list {
+  width: fit-content;
+  margin-right: 1%;
+  margin-left: auto;
+  margin-bottom: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  list-style: none;
+  background-color: #D9E5FF;
+}
+
+.others-chat-list {
+  width: fit-content;
+  margin-left: 1%;
+  margin-bottom: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  list-style: none;
+  background-color: white;
+}

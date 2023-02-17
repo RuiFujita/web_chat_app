@@ -1,0 +1,58 @@
+.input-user-name input {
+  width: 60%;
+  padding: 1vmax;
+  border: 1px solid #27acd9;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: 0.5s;
+}
+
+.input-room-name {
+  width: 95%;
+  margin-top: 1%;
+}
+
+.input-room-name input {
+  width: 50%;
+  margin-top: 1%;
+  margin-left: 3%;
+  padding: 0.5vmax;
+  border: 1px solid #27acd9;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: 0.5s;
+}
+
+.input-user-name input:focus,
+.input-room-name input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 1px #27acd9;
+}
+
+.input-message {
+  width: 98%;
+  margin: 0 auto 1%;
+  border-top: 2px solid #DDDDDD;
+  background-color: #EEEEEE;
+}
+
+.input-message input {
+  width: 80%;
+  margin-left: 0.5%;
+  padding: 0.3vmax;
+  border: 2px solid #CCCCCC;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: 0.5s;
+}
+
+.input-message input:focus {
+  outline: none;
+  border-bottom: 2px solid #4169E1;
+}

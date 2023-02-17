@@ -1,0 +1,61 @@
+.btn-register {
+  width: 15%;
+  margin-left: 1%;
+  padding: 1vmax;
+  border: 1px solid #27acd9;
+  border-radius: 5px;
+  color: #27acd9;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: 0.5s;
+}
+
+.btn-create-room {
+  width: 97%;
+  margin: 1.5%;
+  padding: 0.5rem;
+  border: 1px solid #27acd9;
+  border-radius: 5px;
+  color: #27acd9;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: 0.5s;
+}
+
+.btn-create {
+  width: 10%;
+  margin-left: 1%;
+  margin-bottom: 10%;
+  padding: 0.5vmax;
+  border: 1px solid #27acd9;
+  border-radius: 5px;
+  color: #27acd9;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: 0.5s;
+}
+
+.btn-register:hover,
+.btn-create-room:hover,
+.btn-create:hover {
+  color: whitesmoke;
+  background-color: #27acd9;
+}
+
+.btn-send-message {
+  width: 10%;
+  padding: 0.3vmax;
+  border: 1px solid #4169E1;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #4169E1;
+  transition: 0.5s;
+}
+
+.btn-send-message:hover {
+  color: whitesmoke;
+  border: 1px solid #87CEFA;
+  background-color: #87CEFA;
+}
