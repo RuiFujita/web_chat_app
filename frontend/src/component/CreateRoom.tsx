@@ -17,9 +17,12 @@ const CreateRoom = (props: Props) => {
 
   const onClickCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
-    if (roomName === '') {
-      alert('ルーム名を入力してください')
-      return
+    const roomNameMaxLength = 30;
+    if (roomName.length === 0) {
+      alert('ルーム名を入力してください');
+    }else if(roomName.length > roomNameMaxLength){
+      alert('ルーム名を入力してください');
+      setRoomName('');
     }
 
     axios.post(url + '/new_room', { roomName: roomName })
