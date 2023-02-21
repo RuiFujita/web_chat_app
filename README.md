@@ -27,15 +27,10 @@ MySQL(v8.0)  : https://www.mysql.com/jp/
 ![picture 5](images/447b71a939df269070947ae0c47567cc57df4763b3a0882551ad7c4fbfd51eb2.png)  
 
 8.  テーブル名を「room_info」として、以下のようにカラムを追加してください。<br>
-|ColumnName|Datatype|  
-|---|---|  
-|room_id|INT|  
-|room_name|VARCHAR(30)|  
-
-| TH1 | TH2 |
+| Column Name | Datatype |
 ----|----
-| TD1 | TD3 |
-| TD2 | TD4 |
+| room_id | INT |
+| room_name | VARCHAR(30) |
  
 完了したら、Applyボタンをクリックして下さい。Tablesに追加されます。
 ![picture 6](images/ca8510efaa9d0cc6f27ea04d55d1545ed5e8a34f4d84a21e1c84a6c076ebce5c.png)  
