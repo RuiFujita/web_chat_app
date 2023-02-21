@@ -10,9 +10,11 @@ MySQL  : https://www.mysql.com/jp/
     （デフォルトでは C:\Program Files\MySQL にあります。）
 
 3.  MySQLWorkbench.exeを起動します。
-![Alt text](../Users/r23600285/OneDrive%20-%20Ricoh/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97/Workbench%E8%B5%B7%E5%8B%95.png)
+
 4.  MySQL ConnectionsにあるLocal instance MySQL80というコネクションをクリックします。<br>
+![picture 1](images/bde08982fc96e6af7631f8d94bc94c3ac5cdd15f1b1636dbee810a7fcd8e3837.png)  
     passwordの入力を求められますので、インストール時に設定したパスワードを入力してください。
+![picture 2](images/808caa782b7446d00149c9fcd10eb33cef5ded6b000c9c3234e958906c73ddb5.png)  
 
 5.  タブの下に10個のアイコンが並んでいます。
     左から4つ目のアイコン(Create a new schema)をクリックしてください。
