@@ -34,8 +34,8 @@ MySQL(v8.0)  : https://www.mysql.com/jp/
 
 | Name     | Character |
 | ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
+| room_id | INT         |
+| room_name     | VARCHAR(30)        |
 
  
 完了したら、Applyボタンをクリックして下さい。Tablesに追加されます。
