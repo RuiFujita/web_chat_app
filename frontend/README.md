@@ -16,20 +16,27 @@
 * web-vitals 2.1.4
 
 # Installation
-Visual Studio Codeのターミナルを開きます。(ctrl + shift + @)
+Visual Studio Codeのターミナルを開きます。(ctrl+shift+@)<br>
 ターミナル上で以下のコマンドを順に実行します。
-  1. cd .\frontend\ 
-  2. npm ci(もしくはnpm install)
-
-必要なモジュールのインストールが完了します.
+```
+cd .\backend\ 
+npm ci
+```
+npm ciが失敗した場合は
+```
+npm install
+```
+を実行してインストールして下さい。<br>
+しばらくすると必要なモジュールのインストールが完了します.
 
 # Usage
-C:\web_chat_app\frontend
-の階層で以下のコマンドを実行します。
-  npm start
-
-index.tsxが実行され、ブラウザが起動してlocalhost:3000にアクセスします。
-「ようこそ」というテキストとテキストボックス、ボタンが表示されていれば成功です。
+Installationに続いて、ターミナル上で以下のコマンドを実行します。<br>
+```
+npm start
+```
+index.tsxが実行され、ブラウザが起動してlocalhost:3000にアクセスします。<br>
+「ようこそ」というテキストとテキストボックス、ボタンが表示されていれば成功です。<br>
+動作を止める場合は、ctrl+cで止めることができます。
 
 # Note
 前提として、3000番ポートは使用されていないこととします。

@@ -1,5 +1,5 @@
 # backend
-MySQL（データベース）とデータの受け渡しをしたり、フロントエンドとやり取りをしている
+MySQL（データベース）とデータの受け渡しをしたり、フロントエンドとやり取りをしている。
 
 # Requirement
 * @types/express 4.17.15
@@ -13,19 +13,26 @@ MySQL（データベース）とデータの受け渡しをしたり、フロン
 * socket.io 4.6.0
 
 # Installation
-Visual Studio Codeのターミナルを開きます。ctrl+shift+@で開きます。<br>
+Visual Studio Codeのターミナルを開きます。(ctrl+shift+@)<br>
 ターミナル上で以下のコマンドを順に実行します。
-  1. cd .\backend\ 
-  2. npm ci(もしくはnpm install)
-
-必要なモジュールのインストールが完了します.
+```
+cd .\backend\ 
+npm ci
+```
+npm ciが失敗した場合は
+```
+npm install
+```
+を実行してインストールして下さい。<br>
+しばらくすると必要なモジュールのインストールが完了します.
 
 # Usage
-C:\web_chat_app\backend
-の階層で以下のコマンドを実行します。
-  npm start
-
-database.tsが実行されます。
+Installationに続いて、ターミナル上で以下のコマンドを実行します。<br>
+```
+npm start
+```
+database.tsが実行されます。<br>
+動作を止める場合は、ctrl+cで止めることができます。
 
 # Note
 前提として、8000番ポートは使用されていないこととします。

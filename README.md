@@ -20,7 +20,7 @@ MySQL  : https://www.mysql.com/jp/
 ![picture 3](images/aafa997f465ee2bfe95f081e9ce9539d8fec18ed0fb3eb83072e68760656d999.png)  
 
 6. 「web_chatdb」という名前に書き換えて、Applyボタンをクリックしてください。<br>
-    左のSCHEMAS欄にweb_chatdbが追加されます。
+    画面左のSCHEMAS欄にweb_chatdbが追加されます。
 ![picture 4](images/0a57fe157e5ef6094bbb9bc8635faa7c045ae066139931cf8ca635fe367578d9.png)  
 
 7.  web_chatdbを開き、Tablesを左クリックしてCreate tableをクリックしてください。
