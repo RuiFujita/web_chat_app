@@ -13,7 +13,7 @@ MySQL（データベース）とデータの受け渡しをしたり、フロン
 * socket.io 4.6.0
 
 # Installation
-Visual Studio Codeのターミナルを開きます。(ctrl + shift + @)
+Visual Studio Codeのターミナルを開きます。ctrl+shift+@で開きます。<br>
 ターミナル上で以下のコマンドを順に実行します。
   1. cd .\backend\ 
   2. npm ci(もしくはnpm install)
