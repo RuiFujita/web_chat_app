@@ -20,20 +20,18 @@ MySQL  : https://www.mysql.com/jp/
 ![picture 3](images/aafa997f465ee2bfe95f081e9ce9539d8fec18ed0fb3eb83072e68760656d999.png)  
 
 6. 「web_chatdb」という名前に書き換えて、Applyボタンをクリックしてください。<br>
+    左のSCHEMAS欄にweb_chatdbが追加されます。
 ![picture 4](images/0a57fe157e5ef6094bbb9bc8635faa7c045ae066139931cf8ca635fe367578d9.png)  
-    左のSCHEMAS欄にweb_chatdbが表示されます。
 
 7.  web_chatdbを開き、Tablesを左クリックしてCreate tableをクリックしてください。
 ![picture 5](images/447b71a939df269070947ae0c47567cc57df4763b3a0882551ad7c4fbfd51eb2.png)  
 
-8.  テーブル名を「room_info」として、下画像のようにカラムを追加してください。
+8.  テーブル名を「room_info」として、下画像のようにカラムを追加してください。<br>
+    完了したら、Applyボタンをクリックして下さい。Tablesに追加されます。
 ![picture 6](images/ca8510efaa9d0cc6f27ea04d55d1545ed5e8a34f4d84a21e1c84a6c076ebce5c.png)  
 
 9. 7~8と同様の手順で「chat_log」テーブルも作成します。
 ![picture 7](images/2f9ac2ee1e0ce14b28ab26a6284359fc02c5e2a4971f3e7bd0dad8aefd755ef8.png)  
-
-# Note
-注意点などがあれば書く
 
 # Author
 * 藤田留衣
