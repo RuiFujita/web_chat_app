@@ -27,7 +27,6 @@ passwordの入力を求められますので、インストール時に設定し
 ![picture 5](images/447b71a939df269070947ae0c47567cc57df4763b3a0882551ad7c4fbfd51eb2.png)  
 
 8. テーブル名を「room_info」として、以下のようにカラムを追加してください。
-
 | Column Name | Datatype    |
 | ---         | ---         |
 | room_id     | INT         |
@@ -37,7 +36,6 @@ passwordの入力を求められますので、インストール時に設定し
 完了したら、Applyボタンをクリックして下さい。Tablesに追加されます。
 
 9. 7~8と同様の手順で「chat_log」テーブルも作成します。
-
 | Column Name       | Datatype     |
 | ---               | ---          |
 | message_id        | INT          |
