@@ -32,6 +32,11 @@ MySQL(v8.0)  : https://www.mysql.com/jp/
 |room_id|INT|  
 |room_name|VARCHAR(30)|  
 
+| TH1 | TH2 |
+----|----
+| TD1 | TD3 |
+| TD2 | TD4 |
+ 
 完了したら、Applyボタンをクリックして下さい。Tablesに追加されます。
 ![picture 6](images/ca8510efaa9d0cc6f27ea04d55d1545ed5e8a34f4d84a21e1c84a6c076ebce5c.png)  
 
