@@ -32,9 +32,8 @@ MySQL(v8.0)  : https://www.mysql.com/jp/
 | ---         | ---         |
 | room_id     | INT         |
 | room_name   | VARCHAR(30) |
-
-完了したら、Applyボタンをクリックして下さい。Tablesに追加されます。
 ![picture 6](images/ca8510efaa9d0cc6f27ea04d55d1545ed5e8a34f4d84a21e1c84a6c076ebce5c.png)  
+完了したら、Applyボタンをクリックして下さい。Tablesに追加されます。
 
 9. 7~8と同様の手順で「chat_log」テーブルも作成します。
 ![picture 7](images/2f9ac2ee1e0ce14b28ab26a6284359fc02c5e2a4971f3e7bd0dad8aefd755ef8.png)  
