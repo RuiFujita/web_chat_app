@@ -28,7 +28,7 @@ MySQL(v8.0)  : https://www.mysql.com/jp/
 
 8.  テーブル名を「room_info」として、以下のようにカラムを追加してください。<br>
 |Column Name|Datatype|  
-|:----|:----|  
+|:---|:---|  
 |room_id|INT|  
 |room_name|VARCHAR(30)|  
 
