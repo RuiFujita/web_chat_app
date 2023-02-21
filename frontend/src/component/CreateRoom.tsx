@@ -20,19 +20,19 @@ const CreateRoom = (props: Props) => {
     const roomNameMaxLength = 30;
     if (roomName.length === 0) {
       alert('ルーム名を入力してください');
-    }else if(roomName.length > roomNameMaxLength){
+    } else if (roomName.length > roomNameMaxLength) {
       alert('ルーム名を入力してください');
       setRoomName('');
+    } else {
+      axios.post(url + '/new_room', { roomName: roomName })
+        .then(response => {
+          axios.get(url + '/room_info')
+            .then(response => {
+              props.setRoomInfo(response.data);
+            });
+        });
+      setRoomName('');
     }
-
-    axios.post(url + '/new_room', { roomName: roomName })
-      .then(response => {
-        axios.get(url + '/room_info')
-          .then(response => {
-            props.setRoomInfo(response.data);
-          });
-      });
-    setRoomName('');
   }
 
   return (
