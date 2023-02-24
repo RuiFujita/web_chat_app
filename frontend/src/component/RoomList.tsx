@@ -30,6 +30,9 @@ const RoomList = (props: Props) => {
       .then((response) => {
         setRoomData(response.data);
       })
+      .catch((error) => {
+        console.log(error);
+      })
   }, []);
 
   const onClickSwitchCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
