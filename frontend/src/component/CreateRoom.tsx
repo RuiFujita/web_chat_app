@@ -21,7 +21,7 @@ const CreateRoom = (props: Props) => {
     if (roomName.length === 0) {
       alert('ルーム名を入力してください');
     } else if (roomName.length > roomNameMaxLength) {
-      alert('ルーム名を入力してください');
+      alert('文字数制限を超えています（30字以下）');
       setRoomName('');
     } else {
       axios.post(url + '/new_room', { roomName: roomName })

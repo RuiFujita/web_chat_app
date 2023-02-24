@@ -19,7 +19,7 @@ const RegisterUserName = () => {
     if (userName.length === 0) {
       alert('名前を入力してください');
     } else if (userName.length > userNameMaxLength) {
-      alert('文字数制限を超えています');
+      alert('文字数制限を超えています(20字以下)');
       setUserName('');
     } else {
       setSwitchRoomList(true);
