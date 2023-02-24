@@ -31,7 +31,7 @@ const RoomList = (props: Props) => {
         setRoomData(response.data);
       })
       .catch((error) => {
-        console.log('error' : error);
+        console.log('error:' error);
       })
   }, []);
 
