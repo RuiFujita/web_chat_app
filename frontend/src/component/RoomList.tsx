@@ -23,10 +23,10 @@ const RoomList = (props: Props) => {
   const [roomName, setRoomName] = useState('');
   const [switchCreateRoom, setSwitchCreateRoom] = useState(false);
   const [switchChatSpace, setSwitchChatSpace] = useState(false);
-  const url = 'http://localhost:8000';
+  // const url = 'http://localhost:8000';
 
   useEffect(() => {
-    axios.get(url + '/room_info')
+    axios.get('/room_info')
       .then(response => {
         setRoomData(response.data);
       })

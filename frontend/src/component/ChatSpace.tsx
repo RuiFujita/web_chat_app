@@ -38,7 +38,7 @@ const ChatView = (props: Props) => {
   }, [props.roomName]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/chat_log', {
+    axios.get('/chat_log', {
       params: { roomId: props.roomId }
     })
       .then(response => {
@@ -68,7 +68,7 @@ const ChatView = (props: Props) => {
       });
     setMessage('');
 
-    axios.post('http://localhost:8000/messages', {
+    axios.post('/messages', {
       roomId: props.roomId,
       message,
       sender: props.userName,

@@ -9,7 +9,7 @@ type Props = {
 
 const CreateRoom = (props: Props) => {
   const [roomName, setRoomName] = useState('');
-  const url = 'http://localhost:8000';
+  // const url = 'http://localhost:8000';
 
   const inputRoomName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRoomName(event.target.value);
@@ -26,7 +26,7 @@ const CreateRoom = (props: Props) => {
     } else {
       axios.post('/new_room', { roomName: roomName })
         .then(response => {
-          axios.get(url + '/room_info')
+          axios.get('/room_info')
             .then(response => {
               props.setRoomInfo(response.data);
             });
