@@ -27,7 +27,7 @@ const RoomList = (props: Props) => {
 
   useEffect(() => {
     axios.get('/room_info')
-      .then((response: { data: any; }) => {
+      .then((response) => {
         setRoomData(response.data);
       })
   }, []);
