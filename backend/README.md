@@ -35,7 +35,16 @@ database.tsが実行されます。<br>
 動作を止める場合は、ctrl+cで止めることができます。
 
 # Note
-前提として、8000番ポートは使用されていないこととします。
+前提として、8000番ポートは使用されていないこととします。<br>
+database.tsの18行目、passwordの部分をMySQLで設定したパスワードに変更お願いいたします。
+```
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',     //ここを変更
+  database: 'web_chatdb',
+});
+```
 
 # Author
 * 藤田留衣
