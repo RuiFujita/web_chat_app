@@ -25,9 +25,10 @@ type SendMessage = {
   userName: string,
 }
 
-const socket = io('http://localhost:8000/');
+const url = 'http://localhost:8000';
+const socket = io(url);
 
-const ChatView = (props: Props) => {
+const ChatSpace = (props: Props) => {
   const [chatLog, setChatLog] = useState([]);
   const [message, setMessage] = useState('');
   const [messageList, setMessageList] = useState<SendMessage[]>([]);
@@ -38,7 +39,7 @@ const ChatView = (props: Props) => {
   }, [props.roomName]);
 
   useEffect(() => {
-    axios.get('/chat_log', {
+    axios.get(url + '/chat_log', {
       params: { roomId: props.roomId }
     })
       .then(response => {
@@ -53,13 +54,23 @@ const ChatView = (props: Props) => {
     });
   }, []);
 
-  const inputMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMessage(event.target.value);
+  const isDisabled = () => {
+    const messageMaxLength = 200;
+    const messageRegex = new RegExp(/['\\]/);
+
+    if (message.length === 0) {
+      return true;
+    } else if (message.length > messageMaxLength) {
+      return true;
+    } else if (messageRegex.test(message)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   const onClickSend = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
-    if (!message) { return };
 
     socket.emit('client_to_server',
       {
@@ -68,7 +79,7 @@ const ChatView = (props: Props) => {
       });
     setMessage('');
 
-    axios.post('/messages', {
+    axios.post(url + '/messages', {
       roomId: props.roomId,
       message,
       sender: props.userName,
@@ -99,12 +110,12 @@ const ChatView = (props: Props) => {
         <input
           value={message}
           placeholder='送信したい内容を入力して下さい'
-          onChange={inputMessage}
+          onChange={(event) => setMessage(event.target.value)}
         />
-        <button className='send-message-button' onClick={onClickSend}>送信</button>
+        <button className='send-message-button' onClick={onClickSend} disabled={isDisabled()}>送信</button>
       </div>
     </div>
   );
 }
 
-export default ChatView;
+export default ChatSpace;

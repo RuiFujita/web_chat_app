@@ -30,9 +30,6 @@ const RoomList = (props: Props) => {
       .then((response) => {
         setRoomData(response.data);
       })
-      .catch((error) => {
-        console.log('error:' error);
-      })
   }, []);
 
   const onClickSwitchCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -49,14 +46,14 @@ const RoomList = (props: Props) => {
 
   const onClickRoomName = (index: number) => {
     setRoomId(index);
-    setRoomName(roomData[index - 1]['room_name']);
+    setRoomName(roomData[index-1]['room_name']);
 
     const initialText = document.getElementById('initialText');
     const selectedRoomName = document.getElementsByClassName('room-name')[index - 1].textContent;
     initialText!.textContent = selectedRoomName;
 
     if (switchCreateRoom === true) {
-      setSwitchCreateRoom(false)
+      setSwitchCreateRoom(false);
     }
     setSwitchChatSpace(true);
   }
