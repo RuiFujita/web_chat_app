@@ -58,11 +58,7 @@ const ChatSpace = (props: Props) => {
     const messageMaxLength = 200;
     const messageRegex = new RegExp(/['\\]/);
 
-    if (message.length === 0) {
-      return true;
-    } else if (message.length > messageMaxLength) {
-      return true;
-    } else if (messageRegex.test(message)) {
+    if (message.length === 0 || message.length > messageMaxLength || messageRegex.test(message)) {
       return true;
     } else {
       return false;

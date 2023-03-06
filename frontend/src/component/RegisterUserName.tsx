@@ -13,11 +13,7 @@ const RegisterUserName = () => {
     const userNameMaxLength = 20;
     const userNameRegex = new RegExp(/[ -/:-@[-`{-~！-／：-＠［-｀｛-～、-〜”’・　]/);
 
-    if (userName.length === 0) {
-      return true;
-    } else if (userName.length > userNameMaxLength) {
-      return true;
-    } else if (userNameRegex.test(userName)) {
+    if (userName.length === 0 || userName.length > userNameMaxLength || userNameRegex.test(userName)) {
       return true;
     } else {
       return false;

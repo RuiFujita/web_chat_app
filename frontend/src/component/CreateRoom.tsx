@@ -15,11 +15,7 @@ const CreateRoom = (props: Props) => {
     const roomNameMaxLength = 30;
     const roomNameRegex = new RegExp(/[ -/:-@[-`{-~！-／：-＠［-｀｛-～、-〜”’・　]/);
 
-    if (roomName.length === 0) {
-      return true;
-    } else if (roomName.length > roomNameMaxLength) {
-      return true;
-    } else if (roomNameRegex.test(roomName)) {
+    if (roomName.length === 0 || roomName.length > roomNameMaxLength || roomNameRegex.test(roomName)) {
       return true;
     } else {
       return false;
