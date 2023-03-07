@@ -1,4 +1,4 @@
-.welcome-text{
+.welcome-text {
   width: 70%;
   margin: 10% auto 0;
   text-align: center;
@@ -8,7 +8,6 @@
 
 .room-name-text {
   width: 95%;
-  height: 5%;
   margin: 0 auto;
   padding: 0.5%;
   border-bottom: 2px solid #DDDDDD;

@@ -25,6 +25,7 @@
   background-color: #DDDDDD;
   cursor: pointer;
   transition: 0.3s;
+  word-break: break-all;
 }
 
 .room-name-list li:hover {
@@ -54,6 +55,7 @@
   line-height: 1.5;
   list-style: none;
   background-color: #D9E5FF;
+  word-break: break-all;
 }
 
 .others-chat-list {
@@ -67,4 +69,5 @@
   line-height: 1.5;
   list-style: none;
   background-color: white;
+  word-break: break-all;
 }

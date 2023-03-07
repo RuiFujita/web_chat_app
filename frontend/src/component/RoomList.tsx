@@ -26,12 +26,9 @@ const RoomList = (props: Props) => {
   const url = 'http://localhost:8000';
 
   useEffect(() => {
-    axios.get(url + '/room_info')
+    axios.get(`${url}/room_info`)
       .then((response) => {
         setRoomData(response.data);
-      })
-      .catch((error) => {
-        console.log('error:' error);
       })
   }, []);
 
@@ -56,7 +53,7 @@ const RoomList = (props: Props) => {
     initialText!.textContent = selectedRoomName;
 
     if (switchCreateRoom === true) {
-      setSwitchCreateRoom(false)
+      setSwitchCreateRoom(false);
     }
     setSwitchChatSpace(true);
   }
