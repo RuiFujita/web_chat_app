@@ -13,9 +13,10 @@ const CreateRoom = (props: Props) => {
 
   const isDisabled = () => {
     const roomNameMaxLength = 30;
-    const roomNameRegex = new RegExp(/[ -/:-@[-`{-~！-／：-＠［-｀｛-～、-〜”’・　]/);
+    const roomNameRegex = new RegExp(/[!-/:-@[-`{-~！-／：-＠［-｀｛-～、-〜”’・]/);
+    const spaceRegex = new RegExp(/^\s+?$/);
 
-    if (roomName.length === 0 || roomName.length > roomNameMaxLength || roomNameRegex.test(roomName)) {
+    if (!roomName.length || roomName.length > roomNameMaxLength || roomNameRegex.test(roomName) || spaceRegex.test(roomName)) {
       return true;
     } else {
       return false;

@@ -11,9 +11,10 @@ const RegisterUserName = () => {
 
   const isDisabled = () => {
     const userNameMaxLength = 20;
-    const userNameRegex = new RegExp(/[ -/:-@[-`{-~！-／：-＠［-｀｛-～、-〜”’・　]/);
+    const userNameRegex = new RegExp(/[!-/:-@[-`{-~！-／：-＠［-｀｛-～、-〜”’・]/);
+    const spaceRegex = new RegExp(/^\s+?$/);
 
-    if (userName.length === 0 || userName.length > userNameMaxLength || userNameRegex.test(userName)) {
+    if (!userName.length || userName.length > userNameMaxLength || userNameRegex.test(userName) || spaceRegex.test(userName)) {
       return true;
     } else {
       return false;

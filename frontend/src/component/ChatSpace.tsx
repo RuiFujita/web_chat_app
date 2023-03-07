@@ -57,8 +57,9 @@ const ChatSpace = (props: Props) => {
   const isDisabled = () => {
     const messageMaxLength = 200;
     const messageRegex = new RegExp(/['\\]/);
+    const spaceRegex = new RegExp(/^\s+?$/);
 
-    if (message.length === 0 || message.length > messageMaxLength || messageRegex.test(message)) {
+    if (!message.length || message.length > messageMaxLength || messageRegex.test(message) || spaceRegex.test(message)) {
       return true;
     } else {
       return false;
