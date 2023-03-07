@@ -26,9 +26,9 @@ const CreateRoom = (props: Props) => {
   const onClickCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
 
-    axios.post(url + '/new_room', { roomName: roomName })
-      .then(response => {
-        axios.get(url + '/room_info')
+    axios.post(`${url}/new_room`, { roomName: roomName })
+      .then(() => {
+        axios.get(`${url}/room_info`)
           .then(response => {
             props.setRoomInfo(response.data);
           });

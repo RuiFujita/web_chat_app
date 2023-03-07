@@ -26,7 +26,7 @@ const RoomList = (props: Props) => {
   const url = 'http://localhost:8000';
 
   useEffect(() => {
-    axios.get(url + '/room_info')
+    axios.get(`${url}/room_info`)
       .then((response) => {
         setRoomData(response.data);
       })
@@ -46,7 +46,7 @@ const RoomList = (props: Props) => {
 
   const onClickRoomName = (index: number) => {
     setRoomId(index);
-    setRoomName(roomData[index-1]['room_name']);
+    setRoomName(roomData[index - 1]['room_name']);
 
     const initialText = document.getElementById('initialText');
     const selectedRoomName = document.getElementsByClassName('room-name')[index - 1].textContent;

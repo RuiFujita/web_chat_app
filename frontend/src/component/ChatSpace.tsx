@@ -39,7 +39,7 @@ const ChatSpace = (props: Props) => {
   }, [props.roomName]);
 
   useEffect(() => {
-    axios.get(url + '/chat_log', {
+    axios.get(`${url}/chat_log`, {
       params: { roomId: props.roomId }
     })
       .then(response => {
@@ -76,7 +76,7 @@ const ChatSpace = (props: Props) => {
       });
     setMessage('');
 
-    axios.post(url + '/messages', {
+    axios.post(`${url}/messages`, {
       roomId: props.roomId,
       message,
       sender: props.userName,
