@@ -4,6 +4,7 @@ import CreateRoom from './CreateRoom';
 import ChatView from './ChatSpace';
 import '../css/block-room-list.css';
 import '../css/button.css';
+import '../css/contextmenu.css';
 import '../css/list.css';
 import '../css/text-box.css';
 import '../css/text.css';
@@ -58,13 +59,35 @@ const RoomList = (props: Props) => {
     setSwitchChatSpace(true);
   }
 
+  const viewContextMenu = (event: React.MouseEvent) => {
+    event.preventDefault();
+
+    const contextmenu = document.getElementById('contextMenu');
+    contextmenu!.style.left = event.pageX + 'px';
+    contextmenu!.style.top = event.pageY + 'px';
+    contextmenu!.style.display = 'block';
+
+    const roomNameList = document.getElementById('roomNameList');
+    roomNameList!.style.pointerEvents = 'none';
+
+    document.body.addEventListener('click', () => {
+      contextmenu!.style.display = 'none';
+      roomNameList!.style.pointerEvents = 'auto';
+    })
+  }
+
   return (
-    <div className='whole'>
+    <div className='whole' >
       <div className='room-list-space'>
-        <div className='room-name-list'>
+        <div className='room-name-list' id='roomNameList'>
           <ul>
             {roomData.map((room: Room) => (
-              <li className='room-name' onClick={() => onClickRoomName(room.room_id)} key={room.room_id}>{room.room_name}</li>
+              <li
+                className='room-name'
+                onClick={() => onClickRoomName(room.room_id)}
+                onContextMenu={viewContextMenu}
+                key={room.room_id}
+              >{room.room_name}</li>
             ))}
           </ul>
         </div>
@@ -75,6 +98,13 @@ const RoomList = (props: Props) => {
         <div id='initialText' className='room-name-text'>ルームを選択してください</div>
         {switchCreateRoom && <CreateRoom setRoomInfo={setRoomData} />}
         {switchChatSpace && <ChatView userName={props.userName} roomId={roomId} roomName={roomName} />}
+      </div>
+
+      <div className='context-menu' id='contextMenu'>
+        <ul>
+          <li>ルームを編集</li>
+          <li>ルームを削除</li>
+        </ul>
       </div>
     </div>
   );
