@@ -4,7 +4,7 @@ import CreateRoom from './CreateRoom';
 import ChatView from './ChatSpace';
 import '../css/block-room-list.css';
 import '../css/button.css';
-import '../css/contextmenu.css';
+import '../css/context-menu.css';
 import '../css/list.css';
 import '../css/text-box.css';
 import '../css/text.css';
@@ -62,16 +62,16 @@ const RoomList = (props: Props) => {
   const viewContextMenu = (event: React.MouseEvent) => {
     event.preventDefault();
 
-    const contextmenu = document.getElementById('contextMenu');
-    contextmenu!.style.left = event.pageX + 'px';
-    contextmenu!.style.top = event.pageY + 'px';
-    contextmenu!.style.display = 'block';
+    const contextMenu = document.getElementById('contextMenu');
+    contextMenu!.style.left = event.pageX + 'px';
+    contextMenu!.style.top = event.pageY + 'px';
+    contextMenu!.style.display = 'block';
 
     const roomNameList = document.getElementById('roomNameList');
     roomNameList!.style.pointerEvents = 'none';
 
     document.body.addEventListener('click', () => {
-      contextmenu!.style.display = 'none';
+      contextMenu!.style.display = 'none';
       roomNameList!.style.pointerEvents = 'auto';
     })
   }

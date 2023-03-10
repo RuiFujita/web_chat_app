@@ -1,0 +1,21 @@
+.context-menu {
+  position: fixed;
+  width: 200px;
+  padding: 5px 0;
+  left: 0px;
+  top: 0px;
+  display: none;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.context-menu li {
+  padding-left: 10%;
+  list-style: none;
+  cursor: pointer;
+}
+
+.context-menu li:hover {
+  background-color: antiquewhite;
+}
