@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CreateRoom from './CreateRoom';
-import ChatSpace from './ChatSpace';
-import EditRoom from './EditRoom';
+import ChatView from './ChatSpace';
 import '../css/block-room-list.css';
 import '../css/button.css';
 import '../css/contextmenu.css';
@@ -60,9 +59,8 @@ const RoomList = (props: Props) => {
     setSwitchChatSpace(true);
   }
 
-  const viewContextMenu = (event: React.MouseEvent, index: number) => {
+  const viewContextMenu = (event: React.MouseEvent) => {
     event.preventDefault();
-    setRoomId(index);
 
     const contextmenu = document.getElementById('contextMenu');
     contextmenu!.style.left = event.pageX + 'px';
@@ -79,7 +77,7 @@ const RoomList = (props: Props) => {
   }
 
   return (
-    <div className='whole'>
+    <div className='whole' >
       <div className='room-list-space'>
         <div className='room-name-list' id='roomNameList'>
           <ul>
@@ -87,7 +85,7 @@ const RoomList = (props: Props) => {
               <li
                 className='room-name'
                 onClick={() => onClickRoomName(room.room_id)}
-                onContextMenu={(event) => viewContextMenu(event, room.room_id)}
+                onContextMenu={viewContextMenu}
                 key={room.room_id}
               >{room.room_name}</li>
             ))}
@@ -99,12 +97,12 @@ const RoomList = (props: Props) => {
       <div className='work-space'>
         <div id='initialText' className='room-name-text'>ルームを選択してください</div>
         {switchCreateRoom && <CreateRoom setRoomInfo={setRoomData} />}
-        {switchChatSpace && <ChatSpace userName={props.userName} roomId={roomId} roomName={roomName} />}
+        {switchChatSpace && <ChatView userName={props.userName} roomId={roomId} roomName={roomName} />}
       </div>
 
       <div className='context-menu' id='contextMenu'>
         <ul>
-          <li id='editRoom' onClick={() => EditRoom(roomId)}>ルームを編集</li>
+          <li>ルームを編集</li>
           <li>ルームを削除</li>
         </ul>
       </div>
