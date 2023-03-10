@@ -77,7 +77,7 @@ const RoomList = (props: Props) => {
   }
 
   return (
-    <div className='whole' >
+    <div className='whole'>
       <div className='room-list-space'>
         <div className='room-name-list' id='roomNameList'>
           <ul>
