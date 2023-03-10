@@ -100,7 +100,7 @@ const ChatSpace = (props: Props) => {
             </div>
           ))}
         </ul>
-      </div >
+      </div>
 
       <div className='input-message'>
         <p className='user-name-text'>{props.userName}</p>
