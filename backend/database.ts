@@ -40,6 +40,18 @@ app.post('/new_room', (request, response) => {
   });
 })
 
+app.post('/edit_room', (request, response) => {
+  response.set({ 'Access-Control-Allow-Origin': '*' })
+  connection.connect();
+
+  const roomName = request.body.roomName;
+  const roomId = request.body.roomId;
+  connection.query(`UPDATE room_info SET room_name='${roomName}' WHERE (room_id=${roomId})`, function (error: any, results: []) {
+    if (error) throw error;
+    response.status(200).send(results);
+  });
+})
+
 app.get('/chat_log', (request, response) => {
   response.set({ 'Access-Control-Allow-Origin': '*' })
   connection.connect();

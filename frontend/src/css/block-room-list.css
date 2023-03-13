@@ -1,5 +1,6 @@
 .whole {
   display: flex;
+  position: relative;
 }
 
 .room-list-space {
