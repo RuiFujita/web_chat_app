@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CreateRoom from './CreateRoom';
-import ChatView from './ChatSpace';
+import ChatSpace from './ChatSpace';
+import EditRoom from './EditRoom';
 import '../css/block-room-list.css';
 import '../css/button.css';
 import '../css/context-menu.css';
@@ -21,9 +22,11 @@ type Room = {
 const RoomList = (props: Props) => {
   const [roomData, setRoomData] = useState([]);
   const [roomId, setRoomId] = useState(0);
+  const [contextMenuRoomId, setContextMenuRoomId] = useState(0);
   const [roomName, setRoomName] = useState('');
   const [switchCreateRoom, setSwitchCreateRoom] = useState(false);
   const [switchChatSpace, setSwitchChatSpace] = useState(false);
+  const [viewEditWindow, setViewEditWindow] = useState(false);
   const url = 'http://localhost:8000';
 
   useEffect(() => {
@@ -36,13 +39,12 @@ const RoomList = (props: Props) => {
   const onClickSwitchCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
 
+    const initialText = document.getElementById('initialText');
+    initialText!.textContent = 'ルームを作成します';
     if (switchChatSpace) {
       setSwitchChatSpace(false);
     }
     setSwitchCreateRoom(true);
-
-    const initialText = document.getElementById('initialText');
-    initialText!.textContent = 'ルームを作成します';
   }
 
   const onClickRoomName = (index: number) => {
@@ -59,8 +61,10 @@ const RoomList = (props: Props) => {
     setSwitchChatSpace(true);
   }
 
-  const viewContextMenu = (event: React.MouseEvent) => {
+  const viewContextMenu = (event: React.MouseEvent, index: number) => {
     event.preventDefault();
+    setContextMenuRoomId(index);
+    setRoomName(roomData[index - 1]['room_name']);
 
     const contextMenu = document.getElementById('contextMenu');
     contextMenu!.style.left = event.pageX + 'px';
@@ -85,7 +89,7 @@ const RoomList = (props: Props) => {
               <li
                 className='room-name'
                 onClick={() => onClickRoomName(room.room_id)}
-                onContextMenu={viewContextMenu}
+                onContextMenu={(event) => viewContextMenu(event, room.room_id)}
                 key={room.room_id}
               >{room.room_name}</li>
             ))}
@@ -97,15 +101,27 @@ const RoomList = (props: Props) => {
       <div className='work-space'>
         <div id='initialText' className='room-name-text'>ルームを選択してください</div>
         {switchCreateRoom && <CreateRoom setRoomInfo={setRoomData} />}
-        {switchChatSpace && <ChatView userName={props.userName} roomId={roomId} roomName={roomName} />}
+        {switchChatSpace &&
+          <ChatSpace
+            userName={props.userName}
+            roomId={roomId}
+            roomName={roomName}
+          />}
       </div>
 
       <div className='context-menu' id='contextMenu'>
         <ul>
-          <li>ルームを編集</li>
+          <li id='editRoom' onClick={() => setViewEditWindow(true)}>ルームを編集</li>
           <li>ルームを削除</li>
         </ul>
       </div>
+      {viewEditWindow &&
+        <EditRoom
+          roomId={contextMenuRoomId}
+          roomName={roomName}
+          setViewEditWindow={setViewEditWindow}
+          setRoomInfo={setRoomData}
+        />}
     </div>
   );
 }

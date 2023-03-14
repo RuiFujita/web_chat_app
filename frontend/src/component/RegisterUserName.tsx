@@ -37,7 +37,7 @@ const RegisterUserName = () => {
           </div>
         </div>
       }
-      {switchRoomList && <RoomList userName={userName} />}
+      {switchRoomList && <RoomList userName={userName}/>}
     </div>
   );
 };
