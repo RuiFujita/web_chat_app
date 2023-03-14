@@ -66,16 +66,16 @@ const RoomList = (props: Props) => {
     setContextMenuRoomId(index);
     setRoomName(roomData[index - 1]['room_name']);
 
-    const contextmenu = document.getElementById('contextMenu');
-    contextmenu!.style.left = event.pageX + 'px';
-    contextmenu!.style.top = event.pageY + 'px';
-    contextmenu!.style.display = 'block';
+    const contextMenu = document.getElementById('contextMenu');
+    contextMenu!.style.left = event.pageX + 'px';
+    contextMenu!.style.top = event.pageY + 'px';
+    contextMenu!.style.display = 'block';
 
     const roomNameList = document.getElementById('roomNameList');
     roomNameList!.style.pointerEvents = 'none';
 
     document.body.addEventListener('click', () => {
-      contextmenu!.style.display = 'none';
+      contextMenu!.style.display = 'none';
       roomNameList!.style.pointerEvents = 'auto';
     })
   }
