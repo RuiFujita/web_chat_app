@@ -22,6 +22,7 @@ type Room = {
 const RoomList = (props: Props) => {
   const [roomData, setRoomData] = useState([]);
   const [roomId, setRoomId] = useState(0);
+  const [contextMenuRoomId, setContextMenuRoomId] = useState(0);
   const [roomName, setRoomName] = useState('');
   const [switchCreateRoom, setSwitchCreateRoom] = useState(false);
   const [switchChatSpace, setSwitchChatSpace] = useState(false);
@@ -62,7 +63,7 @@ const RoomList = (props: Props) => {
 
   const viewContextMenu = (event: React.MouseEvent, index: number) => {
     event.preventDefault();
-    setRoomId(index);
+    setContextMenuRoomId(index);
     setRoomName(roomData[index - 1]['room_name']);
 
     const contextmenu = document.getElementById('contextMenu');
@@ -116,7 +117,7 @@ const RoomList = (props: Props) => {
       </div>
       {viewEditWindow &&
         <EditRoom
-          roomId={roomId}
+          roomId={contextMenuRoomId}
           roomName={roomName}
           setViewEditWindow={setViewEditWindow}
           setRoomInfo={setRoomData}
