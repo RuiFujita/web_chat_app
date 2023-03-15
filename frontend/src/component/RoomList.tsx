@@ -37,7 +37,6 @@ const RoomList = (props: Props) => {
         setRoomData(response.data);
       })
   }, []);
-  console.log(roomData);
 
   const onClickSwitchCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
