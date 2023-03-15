@@ -19,7 +19,11 @@ const EditRoom = (props: Props) => {
     const roomNameRegex = new RegExp(/[!-/:-@[-`{-~！-／：-＠［-｀｛-～、-〜”’・]/);
     const spaceRegex = new RegExp(/^\s+?$/);
 
-    if (!editedRoomName.length || editedRoomName.length > roomNameMaxLength || roomNameRegex.test(editedRoomName) || spaceRegex.test(editedRoomName)) {
+    if (!editedRoomName.length
+      || editedRoomName.length > roomNameMaxLength
+      || roomNameRegex.test(editedRoomName)
+      || spaceRegex.test(editedRoomName)
+      || editedRoomName === props.roomName) {
       return true;
     } else {
       return false;
