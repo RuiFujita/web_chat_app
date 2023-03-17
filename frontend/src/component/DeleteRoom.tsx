@@ -10,14 +10,13 @@ type Props = {
 }
 
 const DeleteRoom = (props: Props) => {
-  const url = 'http://localhost:8000';
 
   const onClickDeleteRoom = () => {
-    axios.post(`${url}/delete_room`, {
+    axios.post('/delete_room', {
       roomId: props.roomId
     })
       .then(() => {
-        axios.get(`${url}/room_info`)
+        axios.get('/room_info')
           .then(response => {
             props.setRoomInfo(response.data);
           });
