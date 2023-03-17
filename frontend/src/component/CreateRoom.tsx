@@ -9,7 +9,6 @@ type Props = {
 
 const CreateRoom = (props: Props) => {
   const [roomName, setRoomName] = useState('');
-  const url = 'http://localhost:8000';
 
   const isDisabled = () => {
     const roomNameMaxLength = 30;
@@ -26,9 +25,9 @@ const CreateRoom = (props: Props) => {
   const onClickCreateRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
 
-    axios.post(`${url}/new_room`, { roomName: roomName })
+    axios.post('/new_room', { roomName: roomName })
       .then(() => {
-        axios.get(`${url}/room_info`)
+        axios.get('/room_info')
           .then(response => {
             props.setRoomInfo(response.data);
           });
