@@ -1,6 +1,6 @@
-import express, { response } from "express";
+import express from "express";
 import bodyParser from "body-parser";
-import { createServer, request } from "http";
+import { createServer } from "http";
 import { Server } from "socket.io";
 
 const app = express();
