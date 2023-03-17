@@ -25,8 +25,7 @@ type SendMessage = {
   userName: string,
 }
 
-const url = 'http://localhost:8000';
-const socket = io(url);
+const socket = io();
 
 const ChatSpace = (props: Props) => {
   const [chatLog, setChatLog] = useState([]);
@@ -39,7 +38,7 @@ const ChatSpace = (props: Props) => {
   }, [props.roomName]);
 
   useEffect(() => {
-    axios.get(`${url}/chat_log`, {
+    axios.get('/chat_log', {
       params: { roomId: props.roomId }
     })
       .then(response => {
@@ -76,7 +75,7 @@ const ChatSpace = (props: Props) => {
       });
     setMessage('');
 
-    axios.post(`${url}/messages`, {
+    axios.post('/messages', {
       roomId: props.roomId,
       message,
       sender: props.userName,

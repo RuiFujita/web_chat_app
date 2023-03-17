@@ -29,10 +29,9 @@ const RoomList = (props: Props) => {
   const [switchChatSpace, setSwitchChatSpace] = useState(false);
   const [viewEditWindow, setViewEditWindow] = useState(false);
   const [viewDeleteWindow, setViewDeleteWindow] = useState(false);
-  const url = 'http://localhost:8000';
 
   useEffect(() => {
-    axios.get(`${url}/room_info`)
+    axios.get('/room_info')
       .then((response) => {
         setRoomData(response.data);
       })
