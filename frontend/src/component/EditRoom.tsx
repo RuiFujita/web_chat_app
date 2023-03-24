@@ -12,7 +12,6 @@ type Props = {
 
 const EditRoom = (props: Props) => {
   const [editedRoomName, setEditedRoomName] = useState(props.roomName);
-  const url = 'http://localhost:8000';
 
   const isDisabled = () => {
     const roomNameMaxLength = 30;
@@ -33,12 +32,12 @@ const EditRoom = (props: Props) => {
   const onClickEditRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
 
-    axios.post(`${url}/edit_room`, {
+    axios.post('/edit_room', {
       roomName: editedRoomName,
       roomId: props.roomId
     })
       .then(() => {
-        axios.get(`${url}/room_info`)
+        axios.get('/room_info')
           .then(response => {
             props.setRoomInfo(response.data);
           });
@@ -50,7 +49,7 @@ const EditRoom = (props: Props) => {
     <div className='modal-back'>
       <div className='modal-content'>
         <button className='close-button' onClick={() => { props.setViewEditWindow(false) }}>×</button>
-        <div className='edit-room-name-text'>ルーム名を変更します</div>
+        <div className='context-menu-text'>ルーム名を変更します</div>
         <div className='input-edited-room-name'>ルーム名
           <input
             value={editedRoomName}
