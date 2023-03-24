@@ -84,7 +84,7 @@ const RoomList = (props: Props) => {
       <div className='room-list-space'>
         <div className='room-name-list' id='roomNameList'>
           <ul>
-            {roomData.filter(isDeleted => isDeleted['is_deleted'] === 0).map((room: Room) => (
+            {roomData.map((room: Room) => (
               <li
                 className='room-name'
                 onClick={() => onClickRoomName(room.room_id)}
