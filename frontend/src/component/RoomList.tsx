@@ -3,7 +3,6 @@ import axios from 'axios';
 import CreateRoom from './CreateRoom';
 import ChatSpace from './ChatSpace';
 import EditRoom from './EditRoom';
-import DeleteRoom from './DeleteRoom';
 import '../css/block-room-list.css';
 import '../css/button.css';
 import '../css/context-menu.css';
@@ -28,7 +27,6 @@ const RoomList = (props: Props) => {
   const [switchCreateRoom, setSwitchCreateRoom] = useState(false);
   const [switchChatSpace, setSwitchChatSpace] = useState(false);
   const [viewEditWindow, setViewEditWindow] = useState(false);
-  const [viewDeleteWindow, setViewDeleteWindow] = useState(false);
 
   useEffect(() => {
     axios.get('/room_info')
@@ -113,7 +111,7 @@ const RoomList = (props: Props) => {
       <div className='context-menu' id='contextMenu'>
         <ul>
           <li id='editRoom' onClick={() => setViewEditWindow(true)}>ルームを編集</li>
-          <li onClick={() => setViewDeleteWindow(true)}>ルームを削除</li>
+          <li>ルームを削除</li>
         </ul>
       </div>
       {viewEditWindow &&
@@ -121,13 +119,6 @@ const RoomList = (props: Props) => {
           roomId={contextMenuRoomId}
           roomName={roomName}
           setViewEditWindow={setViewEditWindow}
-          setRoomInfo={setRoomData}
-        />}
-      {viewDeleteWindow &&
-        <DeleteRoom
-          roomId={contextMenuRoomId}
-          roomName={roomName}
-          setViewDeleteWindow={setViewDeleteWindow}
           setRoomInfo={setRoomData}
         />}
     </div>

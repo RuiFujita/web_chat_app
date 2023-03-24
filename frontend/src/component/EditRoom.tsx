@@ -58,7 +58,7 @@ const EditRoom = (props: Props) => {
         </div>
         <div className='modal-content-button'>
           <button className='cancel-button' onClick={() => { props.setViewEditWindow(false) }}>キャンセル</button>
-          <button className='change-button' onClick={onClickEditRoom} disabled={isDisabled()}>変更</button>
+          <button className='edit-button' onClick={onClickEditRoom} disabled={isDisabled()}>変更</button>
         </div>
       </div>
     </div>
