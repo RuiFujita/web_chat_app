@@ -49,7 +49,7 @@ const EditRoom = (props: Props) => {
     <div className='modal-back'>
       <div className='modal-content'>
         <button className='close-button' onClick={() => { props.setViewEditWindow(false) }}>×</button>
-        <div className='context-menu-text'>ルーム名を変更します</div>
+        <div className='context-menu-text'>ルーム名の変更</div>
         <div className='input-edited-room-name'>ルーム名
           <input
             value={editedRoomName}

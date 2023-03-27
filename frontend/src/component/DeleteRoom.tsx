@@ -28,10 +28,10 @@ const DeleteRoom = (props: Props) => {
     <div className='modal-back'>
       <div className='modal-content'>
         <button className='close-button' onClick={() => { props.setViewDeleteWindow(false) }}>×</button>
-        <div className='context-menu-text'>ルームを削除します</div>
-        <div>
-          「{props.roomName}」を削除します<br />
-          よろしいですか
+        <div className='context-menu-text'>ルームの削除</div>
+        <div className='delete-menu-text'>
+          「{props.roomName}」を削除します。<br />
+          よろしいですか？
         </div>
         <div className='modal-content-button'>
           <button className='cancel-button' onClick={() => { props.setViewDeleteWindow(false) }}>キャンセル</button>
