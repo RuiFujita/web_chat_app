@@ -6,7 +6,8 @@ type Props = {
   roomId: number,
   roomName: string,
   setViewDeleteWindow: Function,
-  setRoomInfo: Function
+  setRoomInfo: Function,
+  setSwitchChatSpace: Function
 }
 
 const DeleteRoom = (props: Props) => {
@@ -22,6 +23,10 @@ const DeleteRoom = (props: Props) => {
           });
       });
     props.setViewDeleteWindow(false);
+    props.setSwitchChatSpace(false);
+
+    const initialText = document.getElementById('initialText');
+    initialText!.textContent = 'ルームを選択してください';
   }
 
   return (

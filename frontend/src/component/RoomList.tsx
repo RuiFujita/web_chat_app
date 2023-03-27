@@ -127,6 +127,7 @@ const RoomList = (props: Props) => {
           roomName={roomName}
           setViewDeleteWindow={setViewDeleteWindow}
           setRoomInfo={setRoomData}
+          setSwitchChatSpace={setSwitchChatSpace}
         />}
     </div>
   );
