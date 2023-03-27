@@ -3,6 +3,7 @@ import axios from 'axios';
 import CreateRoom from './CreateRoom';
 import ChatSpace from './ChatSpace';
 import EditRoom from './EditRoom';
+import DeleteRoom from './DeleteRoom';
 import '../css/block-room-list.css';
 import '../css/button.css';
 import '../css/context-menu.css';
@@ -27,6 +28,7 @@ const RoomList = (props: Props) => {
   const [switchCreateRoom, setSwitchCreateRoom] = useState(false);
   const [switchChatSpace, setSwitchChatSpace] = useState(false);
   const [viewEditWindow, setViewEditWindow] = useState(false);
+  const [viewDeleteWindow, setViewDeleteWindow] = useState(false);
 
   useEffect(() => {
     axios.get('/room_info')
@@ -51,8 +53,7 @@ const RoomList = (props: Props) => {
     setRoomName(roomData[index - 1]['room_name']);
 
     const initialText = document.getElementById('initialText');
-    const selectedRoomName = document.getElementsByClassName('room-name')[index - 1].textContent;
-    initialText!.textContent = selectedRoomName;
+    initialText!.textContent = roomData[index - 1]['room_name'];
 
     if (switchCreateRoom === true) {
       setSwitchCreateRoom(false);
@@ -84,9 +85,8 @@ const RoomList = (props: Props) => {
       <div className='room-list-space'>
         <div className='room-name-list' id='roomNameList'>
           <ul>
-            {roomData.map((room: Room) => (
+            {roomData.filter(isDeleted => isDeleted['is_deleted'] === 0).map((room: Room) => (
               <li
-                className='room-name'
                 onClick={() => onClickRoomName(room.room_id)}
                 onContextMenu={(event) => viewContextMenu(event, room.room_id)}
                 key={room.room_id}
@@ -111,7 +111,7 @@ const RoomList = (props: Props) => {
       <div className='context-menu' id='contextMenu'>
         <ul>
           <li id='editRoom' onClick={() => setViewEditWindow(true)}>ルームを編集</li>
-          <li>ルームを削除</li>
+          <li onClick={() => setViewDeleteWindow(true)}>ルームを削除</li>
         </ul>
       </div>
       {viewEditWindow &&
@@ -120,6 +120,14 @@ const RoomList = (props: Props) => {
           roomName={roomName}
           setViewEditWindow={setViewEditWindow}
           setRoomInfo={setRoomData}
+        />}
+      {viewDeleteWindow &&
+        <DeleteRoom
+          roomId={contextMenuRoomId}
+          roomName={roomName}
+          setViewDeleteWindow={setViewDeleteWindow}
+          setRoomInfo={setRoomData}
+          setSwitchChatSpace={setSwitchChatSpace}
         />}
     </div>
   );

@@ -34,7 +34,7 @@ app.post('/new_room', (request, response) => {
   connection.connect();
 
   const roomName = request.body.roomName;
-  connection.query(`INSERT INTO room_info (room_name) VALUES ('${roomName}')`, function (error: any, results: []) {
+  connection.query(`INSERT INTO room_info (room_name, is_deleted) VALUES ('${roomName}', 0)`, function (error: any, results: []) {
     if (error) throw error;
     response.status(200).send(results);
   });
@@ -50,6 +50,18 @@ app.post('/edit_room', (request, response) => {
     if (error) throw error;
     response.status(200).send(results);
   });
+})
+
+app.post('/delete_room', (request, response) => {
+  response.set({ 'Access-Control-Allow-Origin': '*' })
+  connection.connect();
+
+  const roomId = request.body.roomId;
+  connection.query(`UPDATE room_info SET is_deleted=1 WHERE (room_id=${roomId})`, function (error: any,
+    results: []) {
+    if (error) throw error;
+    response.status(200).send(results);
+  })
 })
 
 app.get('/chat_log', (request, response) => {
