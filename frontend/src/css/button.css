@@ -35,7 +35,8 @@
   background-color: #55c4e9;
 }
 
-.edit-button {
+.change-button,
+.delete-button {
   width: fit-content;
   margin: 0 5px 5px 0;
   padding: 0.5vmax;
@@ -51,14 +52,16 @@
 .register-button:hover,
 .create-room-button:hover,
 .create-button:hover,
-.edit-button:hover {
+.change-button:hover,
+.delete-button:hover {
   border-color: #1e8db1;
   background-color: #1e8db1;
 }
 
 .register-button:disabled,
 .create-button:disabled,
-.edit-button:disabled {
+.change-button:disabled,
+.delete-button:disabled {
   color: white;
   border-color: #c1eaf8;
   background-color: #c1eaf8;
