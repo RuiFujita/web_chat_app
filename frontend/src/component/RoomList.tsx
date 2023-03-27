@@ -53,8 +53,7 @@ const RoomList = (props: Props) => {
     setRoomName(roomData[index - 1]['room_name']);
 
     const initialText = document.getElementById('initialText');
-    const selectedRoomName = document.getElementsByClassName('room-name')[index - 1].textContent;
-    initialText!.textContent = selectedRoomName;
+    initialText!.textContent = roomData[index - 1]['room_name'];
 
     if (switchCreateRoom === true) {
       setSwitchCreateRoom(false);
@@ -88,7 +87,6 @@ const RoomList = (props: Props) => {
           <ul>
             {roomData.filter(isDeleted => isDeleted['is_deleted'] === 0).map((room: Room) => (
               <li
-                className='room-name'
                 onClick={() => onClickRoomName(room.room_id)}
                 onContextMenu={(event) => viewContextMenu(event, room.room_id)}
                 key={room.room_id}
