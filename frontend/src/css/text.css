@@ -1,4 +1,4 @@
-.welcome-text{
+.welcome-text {
   width: 70%;
   margin: 10% auto 0;
   text-align: center;
@@ -8,7 +8,6 @@
 
 .room-name-text {
   width: 95%;
-  height: 5%;
   margin: 0 auto;
   padding: 0.5%;
   border-bottom: 2px solid #DDDDDD;
@@ -37,4 +36,20 @@
   margin-left: 1%;
   font-size: 0.7rem;
   line-height: 1.5;
+}
+
+.context-menu-text {
+  width: 95%;
+  margin: 35px auto 10px;
+  padding: 0.5%;
+  border-bottom: 2px solid #DDDDDD;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.delete-menu-text {
+  width: fit-content;
+  margin: 0 auto;
 }

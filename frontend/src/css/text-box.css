@@ -33,8 +33,27 @@
   transition: 0.5s;
 }
 
+.input-edited-room-name {
+  text-align: center;
+}
+
+.input-edited-room-name input {
+  width: 50%;
+  margin-top: 1%;
+  margin-left: 3%;
+  padding: 0.5vmax;
+  border: 1px solid #27acd9;
+  border-radius: 5px;
+  resize: both;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: 0.5s;
+}
+
 .input-user-name input:focus,
-.input-room-name input:focus {
+.input-room-name input:focus,
+.input-edited-room-name input:focus {
   outline: none;
   box-shadow: 0 0 5px 1px #27acd9;
 }

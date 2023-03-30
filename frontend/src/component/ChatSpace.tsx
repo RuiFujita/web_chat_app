@@ -25,9 +25,9 @@ type SendMessage = {
   userName: string,
 }
 
-const socket = io('http://localhost:8000/');
+const socket = io();
 
-const ChatView = (props: Props) => {
+const ChatSpace = (props: Props) => {
   const [chatLog, setChatLog] = useState([]);
   const [message, setMessage] = useState('');
   const [messageList, setMessageList] = useState<SendMessage[]>([]);
@@ -53,13 +53,20 @@ const ChatView = (props: Props) => {
     });
   }, []);
 
-  const inputMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMessage(event.target.value);
+  const isDisabled = () => {
+    const messageMaxLength = 200;
+    const messageRegex = new RegExp(/['\\]/);
+    const spaceRegex = new RegExp(/^\s+?$/);
+
+    if (!message.length || message.length > messageMaxLength || messageRegex.test(message) || spaceRegex.test(message)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   const onClickSend = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
-    if (!message) { return };
 
     socket.emit('client_to_server',
       {
@@ -92,19 +99,19 @@ const ChatView = (props: Props) => {
             </div>
           ))}
         </ul>
-      </div >
+      </div>
 
       <div className='input-message'>
         <p className='user-name-text'>{props.userName}</p>
         <input
           value={message}
           placeholder='送信したい内容を入力して下さい'
-          onChange={inputMessage}
+          onChange={(event) => setMessage(event.target.value)}
         />
-        <button className='send-message-button' onClick={onClickSend}>送信</button>
+        <button className='send-message-button' onClick={onClickSend} disabled={isDisabled()}>送信</button>
       </div>
     </div>
   );
 }
 
-export default ChatView;
+export default ChatSpace;
